@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Feriadapp</string>
+    <string name="title_activity_main">Feriadapp</string>
+    <string name="package_name">com.feriadapp.app</string>
+    <string name="custom_url_scheme">com.feriadapp.app</string>
+    <string name="widget_name">Feriadapp</string>
+    <string name="widget_description">Contador de días hasta el próximo feriado</string>
+</resources>

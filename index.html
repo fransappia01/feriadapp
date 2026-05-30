@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b1018" />
+    <meta name="theme-color" content="#0b1018" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f0f4f8" media="(prefers-color-scheme: light)" />
+    <meta name="description" content="Cuántos días faltan para el próximo feriado en Argentina" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Feriadapp" />
+    <meta name="application-name" content="Feriadapp" />
+    <title>Feriadapp — Feriados Argentina</title>
+    <script>
+      ;(() => {
+        const stored = localStorage.getItem('feriadapp-theme')
+        const theme =
+          stored === 'light' || stored === 'dark'
+            ? stored
+            : window.matchMedia('(prefers-color-scheme: light)').matches
+              ? 'light'
+              : 'dark'
+        document.documentElement.classList.add(theme)
+        document.documentElement.style.colorScheme = theme === 'light' ? 'light' : 'dark'
+
+        const themeMeta = document.querySelector('meta[name="theme-color"]:not([media])')
+        if (themeMeta) {
+          themeMeta.setAttribute('content', theme === 'light' ? '#f0f4f8' : '#0b1018')
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

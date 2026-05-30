@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --color-celeste: #6cb4ee;
+  --color-celeste-soft: #3b82c4;
+  --color-inamovible: #f4b942;
+  --color-trasladable: #a78bfa;
+  --color-puente: #34d399;
+  --color-app: var(--c-app);
+  --color-app-elevated: var(--c-app-elevated);
+  --color-app-surface: var(--c-app-surface);
+  --color-app-text: var(--c-app-text);
+  --color-app-muted: var(--c-app-muted);
+  --color-app-border: var(--c-app-border);
+  --color-btn: var(--c-btn-text);
+}
+
+:root,
+.dark {
+  --c-app: #0b1018;
+  --c-app-elevated: #1e2838;
+  --c-app-surface: #151c28;
+  --c-app-text: #ffffff;
+  --c-app-muted: #8b9bb4;
+  --c-app-border: #2a3548;
+  --c-app-hover: rgb(255 255 255 / 0.05);
+  --c-app-overlay: rgb(255 255 255 / 0.05);
+  --c-app-faint: rgb(255 255 255 / 0.25);
+  --c-app-gradient-1: rgb(108 180 238 / 0.18);
+  --c-app-gradient-2: rgb(167 139 250 / 0.08);
+  --c-btn-text: #0b1018;
+  --color-celeste-soft: #a8d4f5;
+  color-scheme: dark;
+}
+
+.light {
+  --c-app: #f0f4f8;
+  --c-app-elevated: #ffffff;
+  --c-app-surface: #e8eef5;
+  --c-app-text: #0f172a;
+  --c-app-muted: #64748b;
+  --c-app-border: #cbd5e1;
+  --c-app-hover: rgb(15 23 42 / 0.05);
+  --c-app-overlay: rgb(15 23 42 / 0.06);
+  --c-app-faint: rgb(15 23 42 / 0.28);
+  --c-app-gradient-1: rgb(108 180 238 / 0.22);
+  --c-app-gradient-2: rgb(108 180 238 / 0.08);
+  --c-btn-text: #ffffff;
+  --color-celeste-soft: #3b82c4;
+  color-scheme: light;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  @apply m-0 min-h-dvh bg-app font-sans text-app-text antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, var(--c-app-gradient-1), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 100%, var(--c-app-gradient-2), transparent);
+}
+
+#root {
+  @apply min-h-dvh;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.border-app {
+  border-color: var(--c-app-border);
+}
+
+.bg-app {
+  background-color: var(--c-app);
+}
+
+.bg-app-elevated {
+  background-color: var(--c-app-elevated);
+}
+
+.bg-app-surface {
+  background-color: var(--c-app-surface);
+}
+
+.text-app {
+  color: var(--c-app-text);
+}
+
+.text-app-muted {
+  color: var(--c-app-muted);
+}
+
+.text-btn {
+  color: var(--c-btn-text);
+}
+
+.hover\:bg-app-hover:hover {
+  background-color: var(--c-app-hover);
+}
+
+.bg-app-overlay {
+  background-color: var(--c-app-overlay);
+}
+
+.text-app-faint {
+  color: var(--c-app-faint);
+}
+
+.bg-nav {
+  background-color: color-mix(in srgb, var(--c-app) 90%, transparent);
+}
+
+.bg-panel {
+  background-color: color-mix(in srgb, var(--c-app) 60%, transparent);
+}
