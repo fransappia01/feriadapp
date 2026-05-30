@@ -32,6 +32,8 @@
   --c-app-gradient-2: rgb(167 139 250 / 0.08);
   --c-btn-text: #0b1018;
   --color-celeste-soft: #a8d4f5;
+  --logo-bg-start: #1e2838;
+  --logo-bg-end: #151c28;
   color-scheme: dark;
 }
 
@@ -49,6 +51,8 @@
   --c-app-gradient-2: rgb(108 180 238 / 0.08);
   --c-btn-text: #ffffff;
   --color-celeste-soft: #3b82c4;
+  --logo-bg-start: #ffffff;
+  --logo-bg-end: #eef4fa;
   color-scheme: light;
 }
 

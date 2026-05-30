@@ -3,10 +3,9 @@ import { BottomNav } from './components/BottomNav'
 import { CalendarView } from './components/CalendarView'
 import { CountdownView } from './components/CountdownView'
 import { ErrorState } from './components/ErrorState'
-import { InstallPrompt, PwaInstalledBadge } from './components/InstallPrompt'
+import { InstallPrompt } from './components/InstallPrompt'
 import { LoadingState } from './components/LoadingState'
 import { ThemeToggle } from './components/ThemeToggle'
-import { WidgetGuide } from './components/WidgetGuide'
 import { useFeriados } from './hooks/useFeriados'
 import { useWidgetSync } from './hooks/useWidgetSync'
 import type { TabId } from './types/feriado'
@@ -19,7 +18,7 @@ function App() {
   useWidgetSync(feriados, ready)
 
   return (
-    <div className="relative mx-auto flex min-h-dvh max-w-lg flex-col pb-24">
+    <div className="relative mx-auto flex min-h-dvh w-full max-w-md flex-col pb-[calc(5.5rem+env(safe-area-inset-bottom))] sm:max-w-lg md:max-w-xl">
       <ThemeToggle />
 
       {loading && <LoadingState />}
@@ -28,21 +27,18 @@ function App() {
         <>
           {activeTab === 'inicio' && (
             <>
-              <InstallPrompt />
-              <PwaInstalledBadge />
               {isOfflineData && (
-                <div className="mx-6 mb-4 rounded-2xl border border-app bg-app-surface/70 px-4 py-2.5 text-xs text-app-muted">
+                <div className="mx-4 mb-2 mt-[max(4.5rem,calc(env(safe-area-inset-top)+3.5rem))] rounded-2xl border border-app bg-app-surface/70 px-4 py-2.5 text-xs text-app-muted sm:mx-6">
                   Mostrando feriados guardados. Conectate para actualizar.
                 </div>
               )}
               <CountdownView feriados={feriados} />
-              <WidgetGuide />
             </>
           )}
           {activeTab === 'calendario' && (
             <>
               {isOfflineData && (
-                <div className="mx-4 mb-2 mt-14 rounded-2xl border border-app bg-app-surface/70 px-4 py-2.5 text-xs text-app-muted">
+                <div className="mx-4 mb-2 mt-[max(4.5rem,calc(env(safe-area-inset-top)+3.5rem))] rounded-2xl border border-app bg-app-surface/70 px-4 py-2.5 text-xs text-app-muted sm:mx-6">
                   Datos sin conexión — calendario desde caché local.
                 </div>
               )}
@@ -52,6 +48,7 @@ function App() {
         </>
       )}
 
+      <InstallPrompt />
       <BottomNav activeTab={activeTab} onTabChange={setActiveTab} />
     </div>
   )

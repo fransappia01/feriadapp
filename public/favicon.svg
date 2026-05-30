@@ -1,6 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
-  <rect width="512" height="512" rx="112" fill="#0b1018"/>
-  <circle cx="256" cy="256" r="160" fill="#6cb4ee" opacity="0.18"/>
-  <circle cx="256" cy="256" r="120" fill="#6cb4ee" opacity="0.12"/>
-  <text x="256" y="310" text-anchor="middle" font-family="system-ui,sans-serif" font-size="220" font-weight="800" fill="#6cb4ee">F</text>
+  <defs>
+    <linearGradient id="bg" x1="88" y1="64" x2="424" y2="448" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1a2838"/>
+      <stop offset="1" stop-color="#0b1018"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="256" y1="96" x2="256" y2="416" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8ec8f5"/>
+      <stop offset="1" stop-color="#4a8fd4"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="180" y1="120" x2="340" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="118" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="168" fill="url(#glow)" opacity="0.14"/>
+  <circle cx="256" cy="256" r="128" fill="url(#glow)" opacity="0.08"/>
+  <path
+    d="M176 136h152c11 0 20 9 20 20s-9 20-20 20H216v56h88c11 0 20 9 20 20s-9 20-20 20h-88v84c0 11-9 20-20 20s-20-9-20-20V136z"
+    fill="url(#glow)"
+  />
+  <path
+    d="M176 136h152c11 0 20 9 20 20s-9 20-20 20H216v56h88c11 0 20 9 20 20s-9 20-20 20h-88v84c0 11-9 20-20 20s-20-9-20-20V136z"
+    fill="url(#shine)"
+    opacity="0.45"
+  />
 </svg>

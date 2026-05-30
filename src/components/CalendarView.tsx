@@ -54,12 +54,9 @@ export function CalendarView({ feriados }: CalendarViewProps) {
     : undefined
 
   return (
-    <div className="flex flex-1 flex-col gap-6 px-4 pb-8 pt-16">
+    <div className="flex flex-1 flex-col gap-5 px-4 pb-8 pt-[max(4.5rem,calc(env(safe-area-inset-top)+3.5rem))] sm:gap-6 sm:px-6">
       <header>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-celeste-soft">
-          Calendario
-        </p>
-        <h1 className="mt-1 text-2xl font-bold text-app">Feriados {today.getFullYear()}</h1>
+        <h1 className="text-xl font-bold text-app sm:text-2xl">Feriados {today.getFullYear()}</h1>
       </header>
 
       <section className="rounded-3xl border border-app bg-app-elevated/70 p-4">
