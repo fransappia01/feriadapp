@@ -55,6 +55,7 @@ export default defineConfig({
         ],
       },
       workbox: {
+        importScripts: ['notification-sw.js'],
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2,webmanifest}'],
         navigateFallback: '/index.html',
         runtimeCaching: [

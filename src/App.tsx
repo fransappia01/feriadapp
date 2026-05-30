@@ -5,6 +5,7 @@ import { CountdownView } from './components/CountdownView'
 import { ErrorState } from './components/ErrorState'
 import { InstallPrompt } from './components/InstallPrompt'
 import { LoadingState } from './components/LoadingState'
+import { NotificationToggle } from './components/NotificationToggle'
 import { ThemeToggle } from './components/ThemeToggle'
 import { useFeriados } from './hooks/useFeriados'
 import { useWidgetSync } from './hooks/useWidgetSync'
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className="relative mx-auto flex min-h-dvh w-full max-w-md flex-col pb-[calc(5.5rem+env(safe-area-inset-bottom))] sm:max-w-lg md:max-w-xl">
+      <NotificationToggle feriados={feriados} ready={ready} />
       <ThemeToggle />
 
       {loading && <LoadingState />}
